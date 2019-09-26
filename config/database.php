@@ -16,7 +16,7 @@ return [
 
     'username'  => 'root',
 
-    'password'  => 'your password',
+    'password'  => '026690Abcd.',
 
     'charset'   => 'utf8',
 

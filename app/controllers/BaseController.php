@@ -1,4 +1,7 @@
 <?php
+
+use DI\Container;
+
 /**
  * Created by PhpStorm.
  * User: didi
@@ -8,7 +11,13 @@
 
 class BaseController
 {
-    public function __construct()
+    public $app;
+    public $request;
+    public function __construct(Container $app)
     {
+        $this->app = $app;
+
+        $this->request = $this->app->get('request');    //Request object
+        $this->app->get('Courses'); //ORM object
     }
 }

@@ -1,4 +1,7 @@
 <?php
+
+use DI\Container;
+
 /**
  * Created by PhpStorm.
  * User: didi
@@ -8,24 +11,21 @@
 
 class HomeController extends BaseController
 {
-    public function __construct()
-    {
-    }
-
     public function index()
-    {
+{
 
-        //Using The Eloquent ORM
-       //$data = (array) Courses::all();
-       $data = Courses::find(2);
-        var_dump($data->name);
-    }
+    //Using The Eloquent ORM
+    $data = Courses::find(2);
+    var_dump($data->name);
+}
 
     /**
-     * request url:http://localhost:8081/index/demo
+     * request url:http://localhost:8081/index/demo?user=2
      */
     public function demo()
     {
         echo 'this is demo method';
+        $user = $this->request->get('user');
+        var_dump($user);
     }
 }
